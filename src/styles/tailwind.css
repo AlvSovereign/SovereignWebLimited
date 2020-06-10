@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Geomanist";
+  src: url("../assets/fonts/geomanist-light-webfont.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geomanist";
+  src: url("../assets/fonts/geomanist-book-webfont.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+}
+
+.hero {
+  font-size: calc(13.34px + 5.84vw);
+  line-height: calc(30.7px + 5.09vw);
+}
+
+.work-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.typography-opacity {
+  opacity: 0.87;
+}
