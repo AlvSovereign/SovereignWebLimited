@@ -5,6 +5,7 @@ const Hero = () => {
   return (
     <Row
       alignItems="center"
+      className="bg-black"
       direction="col"
       element="section"
       justifyContent="around"
@@ -13,11 +14,17 @@ const Hero = () => {
       <Container>
         <div className="flex flex-col justify-center">
           <div className="mb-12 w-3/4">
-            <Typography component="h1" type="hero" textAlign="left">
+            <Typography
+              className="text-white"
+              component="h1"
+              type="hero"
+              textAlign="left"
+            >
               {"We help you realise your web and mobile applications"}
             </Typography>
           </div>
           <Typography
+            className="text-white"
             component="h2"
             type="heading"
             textAlign="left"
@@ -26,6 +33,7 @@ const Hero = () => {
             {"We specialise in accessible, standards based, data driven"}
           </Typography>
           <Typography
+            className="text-white"
             component="h3"
             type="heading"
             textAlign="left"

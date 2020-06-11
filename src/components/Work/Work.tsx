@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { workData, WorkDataInterface } from "./work-data"
 import { Container, Row, Typography } from "../ui"
 
@@ -28,7 +29,7 @@ const Work = ({}: WorkProps) => {
           type="subheading"
           weight="light"
         >
-          We pride ourselves on the work we do.
+          Amazing clients have allowed us to produce work we are proud of.
         </Typography>
         <div className="flex flex-col ">
           {workData.map((item: WorkDataInterface, index: number) => (
@@ -65,9 +66,17 @@ const Work = ({}: WorkProps) => {
                 <Typography component="h3" gutterBottom="sm" type="subheading">
                   {item.title}
                 </Typography>
-                <Typography component="h4" type="paragraph" weight="light">
+                <Typography
+                  component="h4"
+                  gutterBottom="sm"
+                  type="paragraph"
+                  weight="light"
+                >
                   {item.subTitle}
                 </Typography>
+                <Link className="inline underline" to={item.link} state={item}>
+                  Learn More
+                </Link>
               </Row>
             </Row>
           ))}

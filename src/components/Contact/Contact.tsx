@@ -21,7 +21,15 @@ const Contact = () => {
             type="heading"
             className="text-white"
           >
-            {"Let's talk!"}
+            {"We would love to work with you."}
+          </Typography>
+          <Typography
+            component="h2"
+            weight="medium"
+            type="heading"
+            className="text-white"
+          >
+            {"Let's start the conversation."}
           </Typography>
         </div>
         <div className="flex flex-row items-center justify-start">

@@ -8,17 +8,17 @@ const Navigation = () => {
       <div className="flex flex-row items-center justify-between container mx-auto">
         <div className="flex-1 h-8">
           <a href="/">
-            <Logo className="h-full" />
+            <Logo className="h-full" fill="#fff" />
           </a>
         </div>
         <div className="flex-1 flex flex-row items-end justify-end">
           <a href="">
-            <Typography component="span" type="nav" className="pr-8">
-              Work
+            <Typography className="text-white pr-8" component="span" type="nav">
+              Our Work
             </Typography>
           </a>
           <a href="">
-            <Typography component="span" type="nav">
+            <Typography className="text-white" component="span" type="nav">
               Contact
             </Typography>
           </a>
