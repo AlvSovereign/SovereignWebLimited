@@ -1,9 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import { workData, WorkDataInterface } from "./work-data"
-import { Container, Row, Typography } from "../ui"
+import Img from "gatsby-image"
 
-const Work = ({}: WorkProps) => {
+import { Container, Row, Typography } from "../ui"
+import { SanityWork } from "../../types"
+
+const Work = ({ data }: WorkProps) => {
   return (
     <Row
       alignItems="start"
@@ -32,9 +34,9 @@ const Work = ({}: WorkProps) => {
           Amazing clients have allowed us to produce work we are proud of.
         </Typography>
         <div className="flex flex-col ">
-          {workData.map((item: WorkDataInterface, index: number) => (
+          {data.map(({ node: work }, index: number) => (
             <Row
-              key={index}
+              key={work._id}
               alignItems="center"
               className="py-8"
               direction={{
@@ -46,13 +48,7 @@ const Work = ({}: WorkProps) => {
               justifyContent="between"
             >
               <div className="flex-1 p-2">
-                <img
-                  src={item.image}
-                  alt={item.imageAlt}
-                  className={`flex shadow-xl rounded-sm ${
-                    index % 2 === 0 ? "md:mr-8" : "md:ml-8"
-                  }`}
-                />
+                <Img fluid={work.thumbnail.asset.fluid} />
               </div>
               <Row
                 alignItems="inherit"
@@ -64,7 +60,7 @@ const Work = ({}: WorkProps) => {
                 justifyContent="inherit"
               >
                 <Typography component="h3" gutterBottom="sm" type="subheading">
-                  {item.title}
+                  {work.title}
                 </Typography>
                 <Typography
                   component="h4"
@@ -72,9 +68,13 @@ const Work = ({}: WorkProps) => {
                   type="paragraph"
                   weight="light"
                 >
-                  {item.subTitle}
+                  {work.subtitle}
                 </Typography>
-                <Link className="inline underline" to={item.link} state={item}>
+                <Link
+                  className="inline underline"
+                  to={`/${work.slug.current}`}
+                  state={{ id: work._id }}
+                >
                   Learn More
                 </Link>
               </Row>
@@ -88,4 +88,8 @@ const Work = ({}: WorkProps) => {
 
 export default Work
 
-interface WorkProps {}
+interface WorkProps {
+  data: Array<{
+    node: SanityWork
+  }>
+}

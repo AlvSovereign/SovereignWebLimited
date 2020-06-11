@@ -6,4 +6,6 @@ const Content = ({}: ContentProps) => {
 
 export default Content
 
-interface ContentProps {}
+interface ContentProps {
+  data: any
+}
