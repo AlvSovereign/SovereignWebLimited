@@ -6,8 +6,17 @@ interface TypographyProps {
   children: ReactNode
   className?: string
   component: any
+  display?: "block" | "inline"
   gutterBottom?: "sm" | "md" | "lg"
-  type: "hero" | "heading" | "nav" | "pageTitle" | "paragraph" | "subheading"
+  style?: object
+  type:
+    | "hero"
+    | "heading"
+    | "nav"
+    | "normal"
+    | "pageTitle"
+    | "paragraph"
+    | "subheading"
   weight?: "light" | "medium"
 }
 
@@ -15,9 +24,11 @@ const Typography = ({
   children,
   className,
   component,
+  display = "block",
   gutterBottom,
   textAlign,
   type,
+  style,
   weight,
 }: TypographyProps) => {
   const Component = component || "p"
@@ -29,6 +40,8 @@ const Typography = ({
         "font-sans",
         "subpixel-antialiased",
         {
+          block: display === "block",
+          inline: display === "inline",
           "mb-2": gutterBottom === "sm",
           "mb-4": gutterBottom === "md",
           "mb-8": gutterBottom === "lg",
@@ -46,6 +59,7 @@ const Typography = ({
         },
         className
       )}
+      style={style}
     >
       {children}
     </Component>

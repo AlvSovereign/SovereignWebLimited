@@ -1,8 +1,9 @@
 import React, { ReactNode } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "../Header/Header"
+import Contact from "../Contact/Contact"
 import Footer from "../Footer/Footer"
+import Header from "../Header/Header"
 
 import "../../styles/index.css"
 
@@ -21,6 +22,7 @@ const LandingLayout = ({ children }: LayoutProps) => {
     <>
       <Header />
       <main>{children}</main>
+      <Contact />
       <Footer />
     </>
   )

@@ -10,7 +10,6 @@ const IndexPage = ({ pageContext }) => {
     <LandingLayout>
       <Hero />
       <Work data={allWork} />
-      <Contact />
     </LandingLayout>
   )
 }

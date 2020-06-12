@@ -10,6 +10,7 @@ import author from './author';
 import category from './category';
 import post from './post';
 import technology from './technology';
+import projectIntro from './blocks/projectIntro';
 import work from './work';
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -19,6 +20,8 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+    // Custom blocks
+    projectIntro,
     // The following are document types which will appear
     // in the studio.
     author,

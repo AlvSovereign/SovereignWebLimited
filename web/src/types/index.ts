@@ -27,6 +27,7 @@ export interface SanityTechnology {
 
 export interface SanityWork {
   _id: string
+  _rawBody: any
   id: string
   _type: string
   _createdAt(

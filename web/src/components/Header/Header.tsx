@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from "gatsby"
+
 import Logo from "../../assets/icons/Logo"
 import { Typography } from "../ui"
 
@@ -7,9 +9,9 @@ const Navigation = () => {
     <div className="absolute top-0 left-0 w-screen h-20 p-4 z-10">
       <div className="flex flex-row items-center justify-between container mx-auto">
         <div className="flex-1 h-8">
-          <a href="/">
+          <Link to="/">
             <Logo className="h-full" fill="#fff" />
-          </a>
+          </Link>
         </div>
         <div className="flex-1 flex flex-row items-end justify-end">
           <a href="">

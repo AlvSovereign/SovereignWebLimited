@@ -3,13 +3,13 @@ import React from "react"
 import { Container, Row, Typography } from "../ui"
 import { ImageWithMask } from ".."
 import { SanityWork } from "../../types/index"
+import ContentBlock from "../ContentBlock/ContentBlock"
 
 interface ContentProps {
   data: SanityWork
 }
 
 const Content = ({ data }: ContentProps) => {
-  console.log("data: ", data)
   return (
     <>
       <Row
@@ -73,6 +73,17 @@ const Content = ({ data }: ContentProps) => {
         >
           {data.tagline}
         </Typography>
+      </Row>
+      <Row
+        alignItems="start"
+        className="py-24"
+        direction="col"
+        element="section"
+        height="auto"
+        justifyContent="start"
+        withContainer={true}
+      >
+        <ContentBlock blocks={data._rawBody} />
       </Row>
     </>
   )
