@@ -20,9 +20,13 @@ body {
   margin: 0;
 }
 
-.hero {
+.hero-font {
   font-size: calc(13.34px + 5.84vw);
   line-height: calc(30.7px + 5.09vw);
+}
+
+.hero-height {
+  height: 90vh;
 }
 
 .work-bg {

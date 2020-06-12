@@ -1,26 +1,29 @@
-import React, { ReactNode } from 'react';
-import cx from 'classnames';
+import React, { ReactNode } from "react"
+import cx from "classnames"
+
+import Container from "./Container"
 
 interface RowProps {
-  alignItems: 'center' | 'end' | 'inherit' | 'start'; //'inherit will deliberatly omit its style'
-  background?: 'black';
-  children: ReactNode;
-  className?: string;
-  direction: Direction;
-  element?: any; // the string of a HTML element
-  height: 'auto' | 'full' | 'screen';
-  justifyContent: 'around' | 'between' | 'center' | 'inherit' | 'start';
+  alignItems: "center" | "end" | "inherit" | "start" //'inherit will deliberatly omit its style'
+  background?: "black"
+  children: ReactNode
+  className?: string
+  direction: Direction
+  element?: any // the string of a HTML element
+  height?: "auto" | "full" | "hero" | "screen"
+  justifyContent: "around" | "between" | "center" | "inherit" | "start"
+  withContainer?: boolean
 }
 
-type Direction = 'col' | 'row' | 'row-reverse' | ResponsiveDirection;
+type Direction = "col" | "row" | "row-reverse" | ResponsiveDirection
 
 type ResponsiveDirection = {
-  xs: Direction;
-  sm?: Direction;
-  md?: Direction;
-  lg?: Direction;
-  xl?: Direction;
-};
+  xs: Direction
+  sm?: Direction
+  md?: Direction
+  lg?: Direction
+  xl?: Direction
+}
 
 const Row = ({
   alignItems,
@@ -28,48 +31,51 @@ const Row = ({
   children,
   className,
   direction,
-  element = 'div',
+  element = "div",
   height,
   justifyContent,
+  withContainer = false,
   ...rest
 }: RowProps) => {
-  const Element = element;
+  const Element = element
 
   const createDirectionClassName = (direction: Direction) => {
-    if (typeof direction === 'object') {
+    if (typeof direction === "object") {
       const directions = Object.entries(direction).map(
-        (entry) => `${entry[0] !== 'xs' ? `${entry[0]}:` : ''}flex-${entry[1]}`
-      );
-      return directions;
+        entry => `${entry[0] !== "xs" ? `${entry[0]}:` : ""}flex-${entry[1]}`
+      )
+      return directions
     } else {
-      return `flex-${direction}`;
+      return `flex-${direction}`
     }
-  };
+  }
 
   return (
     <Element
       className={cx(
-        'flex',
+        "flex",
         {
-          'bg-black': background === 'black',
-          'items-center': alignItems === 'center',
-          'items-end': alignItems === 'end',
-          'items-start': alignItems === 'start',
-          'justify-around': justifyContent === 'around',
-          'justify-between': justifyContent === 'between',
-          'justify-center': justifyContent === 'center',
-          'justify-start': justifyContent === 'start',
-          'h-auto': height === 'auto',
-          'h-full': height === 'full',
-          'h-screen': height === 'screen',
+          "bg-black": background === "black",
+          "items-center": alignItems === "center",
+          "items-end": alignItems === "end",
+          "items-start": alignItems === "start",
+          "justify-around": justifyContent === "around",
+          "justify-between": justifyContent === "between",
+          "justify-center": justifyContent === "center",
+          "justify-start": justifyContent === "start",
+          "h-auto": height === "auto",
+          "h-full": height === "full",
+          "hero-height": height === "hero",
+          "h-screen": height === "screen",
         },
         createDirectionClassName(direction),
         className
       )}
-      {...rest}>
-      {children}
+      {...rest}
+    >
+      {withContainer ? <Container>{children}</Container> : <>{children}</>}
     </Element>
-  );
-};
+  )
+}
 
-export default Row;
+export default Row

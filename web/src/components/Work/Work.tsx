@@ -22,7 +22,7 @@ const Work = ({ data }: WorkProps) => {
           textAlign="center"
           type="heading"
         >
-          Work
+          Our Work
         </Typography>
         <Typography
           component="h3"
@@ -72,8 +72,7 @@ const Work = ({ data }: WorkProps) => {
                 </Typography>
                 <Link
                   className="inline underline"
-                  to={`/${work.slug.current}`}
-                  state={{ id: work._id }}
+                  to={`/work/${work.slug.current}`}
                 >
                   Learn More
                 </Link>

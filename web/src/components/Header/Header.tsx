@@ -4,7 +4,7 @@ import { Typography } from "../ui"
 
 const Navigation = () => {
   return (
-    <div className="absolute top-0 left-0 w-screen h-20 p-4">
+    <div className="absolute top-0 left-0 w-screen h-20 p-4 z-10">
       <div className="flex flex-row items-center justify-between container mx-auto">
         <div className="flex-1 h-8">
           <a href="/">

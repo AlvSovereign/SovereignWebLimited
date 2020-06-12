@@ -72,14 +72,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     },
   })
 
-  // const allWork = result.data.allSanityWork.edges || []
-  // allWork.forEach((edge, index) => {
-  //   const path = `/work/${edge.node.slug.current}`
+  createWorkPages(allWork, createPage)
+}
 
-  //   createPage({
-  //     path,
-  //     component: require.resolve("./src/pages/index.tsx"),
-  //     context: { id: edge.node._id, slug: edge.node.slug.current },
-  //   })
-  // })
+const createWorkPages = (allWork, createPage) => {
+  allWork.forEach((edge, index) => {
+    const path = `/work/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve("./src/components/Templates/WorkPage.tsx"),
+      context: { queryId: edge.node._id },
+    })
+  })
 }
