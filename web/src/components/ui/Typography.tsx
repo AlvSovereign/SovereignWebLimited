@@ -17,7 +17,7 @@ interface TypographyProps {
     | "pageTitle"
     | "paragraph"
     | "subheading"
-  weight?: "light" | "medium"
+  weight?: "light" | "medium" | "semibold"
 }
 
 const Typography = ({
@@ -56,6 +56,7 @@ const Typography = ({
           "hero-font": type === "hero",
           "font-light": weight === "light",
           "font-medium": weight === "medium",
+          "font-semibold": weight === "semibold",
         },
         className
       )}

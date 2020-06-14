@@ -11,8 +11,10 @@ interface RowProps {
   direction: Direction
   element?: any // the string of a HTML element
   height?: "auto" | "full" | "hero" | "screen"
+  id?: string
   justifyContent: "around" | "between" | "center" | "inherit" | "start"
   withContainer?: boolean
+  rest?: any
 }
 
 type Direction = "col" | "row" | "row-reverse" | ResponsiveDirection
@@ -33,6 +35,7 @@ const Row = ({
   direction,
   element = "div",
   height,
+  id,
   justifyContent,
   withContainer = false,
   ...rest
@@ -71,6 +74,7 @@ const Row = ({
         createDirectionClassName(direction),
         className
       )}
+      id={id}
       {...rest}
     >
       {withContainer ? <Container>{children}</Container> : <>{children}</>}

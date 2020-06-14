@@ -19,6 +19,7 @@ const Hero = () => {
               component="h1"
               type="hero"
               textAlign="left"
+              weight="semibold"
             >
               {"We help you realise your web and mobile applications"}
             </Typography>

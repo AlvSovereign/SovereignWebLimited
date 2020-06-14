@@ -5,16 +5,16 @@ const Footer = () => {
   return (
     <Row
       alignItems="start"
+      className="py-4"
       direction="col"
       element="footer"
       justifyContent="center"
       height="auto"
+      withContainer={true}
     >
-      <Container className="py-4">
-        <Typography component="h3" type="subheading">
-          {"Sovereign Web Limited, inc 2019"}
-        </Typography>
-      </Container>
+      <Typography component="h3" type="subheading" weight="semibold">
+        {"Sovereign Web Limited, inc 2019"}
+      </Typography>
     </Row>
   )
 }

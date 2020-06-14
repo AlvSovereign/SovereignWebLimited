@@ -83,7 +83,9 @@ const Content = ({ data }: ContentProps) => {
         justifyContent="start"
         withContainer={true}
       >
-        <ContentBlock blocks={data._rawBody} />
+        <div className="w-auto lg:w-2/3 mx-auto">
+          <ContentBlock blocks={data._rawBody} />
+        </div>
       </Row>
     </>
   )

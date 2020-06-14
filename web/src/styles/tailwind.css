@@ -11,13 +11,24 @@
 
 @font-face {
   font-family: "Geomanist";
-  src: url("../assets/fonts/geomanist-book-webfont.woff2") format("woff2");
+  src: url("../assets/fonts/geomanist-regular-webfont.woff2") format("woff2");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geomanist";
+  src: url("../assets/fonts/geomanist-book-webfont.woff2") format("woff2");
+  font-weight: 600;
   font-style: normal;
 }
 
 body {
   margin: 0;
+}
+
+br {
+  margin: 1rem 0;
 }
 
 .hero-font {

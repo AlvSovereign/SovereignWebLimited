@@ -13,6 +13,7 @@ const Work = ({ data }: WorkProps) => {
       direction="col"
       element="section"
       height="auto"
+      id="our-work"
       justifyContent="start"
     >
       <Container>
@@ -21,6 +22,7 @@ const Work = ({ data }: WorkProps) => {
           gutterBottom="sm"
           textAlign="center"
           type="heading"
+          weight="semibold"
         >
           Our Work
         </Typography>

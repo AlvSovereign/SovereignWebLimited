@@ -14,16 +14,26 @@ const Navigation = () => {
           </Link>
         </div>
         <div className="flex-1 flex flex-row items-end justify-end">
-          <a href="">
-            <Typography className="text-white pr-8" component="span" type="nav">
+          <Link to="#our-work">
+            <Typography
+              className="text-white pr-8"
+              component="span"
+              type="nav"
+              weight="semibold"
+            >
               Our Work
             </Typography>
-          </a>
-          <a href="">
-            <Typography className="text-white" component="span" type="nav">
+          </Link>
+          <Link to="#contact">
+            <Typography
+              className="text-white"
+              component="span"
+              type="nav"
+              weight="semibold"
+            >
               Contact
             </Typography>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

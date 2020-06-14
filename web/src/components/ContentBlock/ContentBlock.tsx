@@ -25,6 +25,11 @@ const mapToType = {
   h2: "heading",
 }
 
+const mapToWeight = {
+  normal: "medium",
+  h2: "semi-bold",
+}
+
 const serializers = {
   list: ({ children }) => {
     return <ul className="pl-6">{children}</ul>
@@ -66,15 +71,41 @@ const serializers = {
     ),
     block: ({ children, node }) => {
       const { style } = node
+
+      if (children.includes("")) {
+        return <br />
+      }
+
       return (
         <Typography
           component={mapToElement[style]}
           gutterBottom="md"
           textAlign={style === "h2" ? "center" : "left"}
           type={mapToType[style]}
+          weight={mapToWeight[style]}
         >
           {children}
         </Typography>
+      )
+    },
+    projectIntro: ({ node }) => {
+      const { body, image } = node
+
+      return (
+        <Row
+          alignItems="center"
+          className=""
+          direction={{ xs: "col", sm: "col", md: "col", lg: "row", xl: "row" }}
+          element="div"
+          justifyContent="start"
+        >
+          <div className="flex-1 px-4">
+            <BlockContent blocks={body} serializers={serializers} />
+          </div>
+          <div className="flex-1 px-4">
+            <BlockContent blocks={image} serializers={serializers} />
+          </div>
+        </Row>
       )
     },
   },
