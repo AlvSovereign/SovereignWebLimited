@@ -4,9 +4,17 @@ export interface AllSanityWork {
   }
 }
 
+export interface SanityImageWithAlt {
+  _key: string
+  _type: string
+  altText: string
+  image: SanityImage
+}
+
 export interface SanityImage {
   _key: string
   _type: string
+  altText: string
   asset: any
   hotspot: any
   crop: any
@@ -28,7 +36,6 @@ export interface SanityTechnology {
 export interface SanityWork {
   _id: string
   _rawBody: any
-  id: string
   _type: string
   _createdAt(
     difference: String,
@@ -36,13 +43,15 @@ export interface SanityWork {
     fromNow: Boolean,
     locale: string
   ): Date
+  id: string
   name: string
   title: string
   subtitle: string
   tagline: string
   slug: SanitySlug
-  thumbnail: SanityImage
-  mainImage: SanityImage
+  thumbnail: SanityImageWithAlt
+  mainImage: SanityImageWithAlt
   technology: [SanityTechnology]
   body: [any]
+  url: string
 }

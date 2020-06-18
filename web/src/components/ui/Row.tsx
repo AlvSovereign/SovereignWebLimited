@@ -14,6 +14,7 @@ interface RowProps {
   id?: string
   justifyContent: "around" | "between" | "center" | "inherit" | "start"
   withContainer?: boolean
+  wrap?: boolean
   rest?: any
 }
 
@@ -38,6 +39,7 @@ const Row = ({
   id,
   justifyContent,
   withContainer = false,
+  wrap,
   ...rest
 }: RowProps) => {
   const Element = element
@@ -70,6 +72,7 @@ const Row = ({
           "h-full": height === "full",
           "hero-height": height === "hero",
           "h-screen": height === "screen",
+          "flex-wrap": wrap,
         },
         createDirectionClassName(direction),
         className

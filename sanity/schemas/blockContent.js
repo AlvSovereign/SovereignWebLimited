@@ -64,5 +64,8 @@ export default {
     {
       type: 'projectIntro',
     },
+    {
+      type: 'masonryImages',
+    },
   ],
 };

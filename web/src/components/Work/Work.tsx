@@ -50,7 +50,10 @@ const Work = ({ data }: WorkProps) => {
               justifyContent="between"
             >
               <div className="flex-1 p-2">
-                <Img fluid={work.thumbnail.asset.fluid} />
+                <Img
+                  className="shadow-2xl"
+                  fluid={work.thumbnail.image.asset.fluid}
+                />
               </div>
               <Row
                 alignItems="inherit"

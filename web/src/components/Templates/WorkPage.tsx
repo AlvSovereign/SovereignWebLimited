@@ -29,20 +29,24 @@ export const WorkQuery = graphql`
     sanityWork(_id: { eq: $queryId }) {
       name
       _id
+      _rawBody(resolveReferences: { maxDepth: 5 })
+      href
       mainImage {
-        asset {
-          fluid {
-            ...GatsbySanityImageFluid_withWebp_noBase64
+        altText
+        image {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid_withWebp_noBase64
+            }
           }
         }
+      }
+      slug {
+        current
       }
       subtitle
       tagline
       title
-      slug {
-        current
-      }
-      _rawBody(resolveReferences: { maxDepth: 3 })
     }
   }
 `

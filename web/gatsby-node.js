@@ -37,15 +37,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             thumbnail {
               _key
               _type
-              asset {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
+              altText
+              image {
+                asset {
+                  fluid {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                  }
                 }
               }
             }

@@ -10,6 +10,8 @@ interface ContentProps {
 }
 
 const Content = ({ data }: ContentProps) => {
+  const { mainImage, title, subtitle, url } = data
+
   return (
     <>
       <Row
@@ -21,9 +23,10 @@ const Content = ({ data }: ContentProps) => {
         justifyContent="center"
       >
         <ImageWithMask
+          alt={mainImage.altText}
           className="w-full h-full"
           fadeIn={true}
-          fluid={data.mainImage.asset.fluid}
+          fluid={mainImage.image.asset.fluid}
         />
         <div className="absolute">
           <Container>
@@ -33,7 +36,7 @@ const Content = ({ data }: ContentProps) => {
               component="h1"
               type="pageTitle"
             >
-              {data.title}
+              {title}
             </Typography>
             <Typography
               textAlign="center"
@@ -42,7 +45,16 @@ const Content = ({ data }: ContentProps) => {
               type="subheading"
               weight="light"
             >
-              {data.subtitle}
+              {subtitle}
+            </Typography>
+            <Typography
+              textAlign="center"
+              className="text-white"
+              component="h1"
+              type="subheading"
+              weight="light"
+            >
+              {url}
             </Typography>
           </Container>
         </div>

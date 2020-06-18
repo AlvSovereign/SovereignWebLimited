@@ -35,7 +35,7 @@ const Contact = () => {
         type="heading"
         weight="semibold"
       >
-        {"Let's start the conversation."}
+        {"Let's start a conversation."}
       </Typography>
       <Row
         alignItems="center"

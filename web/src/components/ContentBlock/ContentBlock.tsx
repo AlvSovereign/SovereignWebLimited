@@ -1,6 +1,10 @@
 import React from "react"
 import BlockContent from "@sanity/block-content-to-react"
+import Img, { FluidObject } from "gatsby-image"
+import { getFluidGatsbyImage } from "gatsby-source-sanity"
+
 import { Typography, Row } from "../ui"
+import MasonryImages from "../MasonryImages/MasonryImages"
 
 interface ContentBlockProps {
   blocks: any
@@ -11,6 +15,11 @@ interface ListItemSerializerProps {
   index: number
   key: string
   node: any
+}
+
+const config = {
+  projectId: process.env.SANITY_PROJECT_ID,
+  dataset: process.env.SANITY_DATASET,
 }
 
 const mapToElement = {
@@ -64,11 +73,6 @@ const serializers = {
     )
   },
   types: {
-    code: props => (
-      <pre data-language={props.node.language}>
-        <code>{props.node.code}</code>
-      </pre>
-    ),
     block: ({ children, node }) => {
       const { style } = node
 
@@ -88,21 +92,63 @@ const serializers = {
         </Typography>
       )
     },
+    image: ({ node }) => {
+      const fluid = getFluidGatsbyImage(
+        node.asset.id,
+        { maxWidth: 800 },
+        config
+      )
+
+      return <Img className="w-full h-full" fadeIn={true} fluid={fluid} />
+    },
+    imageWithAlt: ({ node }) => {
+      const { altText, image } = node
+
+      return (
+        <Img
+          alt={altText}
+          className="w-full h-full"
+          fadeIn={true}
+          fluid={getFluidGatsbyImage(image.asset.id, { maxWidth: 800 }, config)}
+        />
+      )
+    },
+    masonryImages: ({ node }) => {
+      const { masonryImage } = node
+
+      return (
+        <Row
+          alignItems="start"
+          direction="row"
+          justifyContent="center"
+          wrap={true}
+        >
+          <MasonryImages>
+            {masonryImage.map(image => (
+              <BlockContent
+                blocks={image}
+                key={image._key}
+                serializers={serializers}
+              />
+            ))}
+          </MasonryImages>
+        </Row>
+      )
+    },
     projectIntro: ({ node }) => {
       const { body, image } = node
 
       return (
         <Row
           alignItems="center"
-          className=""
           direction={{ xs: "col", sm: "col", md: "col", lg: "row", xl: "row" }}
           element="div"
           justifyContent="start"
         >
-          <div className="flex-1 px-4">
+          <div className="flex-1 pb-4 lg:pr-6">
             <BlockContent blocks={body} serializers={serializers} />
           </div>
-          <div className="flex-1 px-4">
+          <div className="flex-1 pb-4 lg:pl-6">
             <BlockContent blocks={image} serializers={serializers} />
           </div>
         </Row>
@@ -112,7 +158,6 @@ const serializers = {
 }
 
 const ContentBlock = ({ blocks }: ContentBlockProps) => {
-  console.log("blocks: ", blocks)
   return <BlockContent blocks={blocks} serializers={serializers} />
 }
 

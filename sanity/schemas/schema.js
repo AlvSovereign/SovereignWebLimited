@@ -8,9 +8,10 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import blockContent from './blockContent';
 import author from './author';
 import category from './category';
+import imageWithAlt from './imageWithAlt';
 import post from './post';
 import technology from './technology';
-import projectIntro from './blocks/projectIntro';
+import { masonryImages, projectIntro } from './blocks';
 import work from './work';
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -20,7 +21,9 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+    imageWithAlt,
     // Custom blocks
+    masonryImages,
     projectIntro,
     // The following are document types which will appear
     // in the studio.
