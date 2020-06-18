@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "sovereign-web-limited-web",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "The web site for Sovereign Web Limited",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Alvin Sovereign <web@alvinsovereign.com>",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
     "@types/node": "^14.0.13",

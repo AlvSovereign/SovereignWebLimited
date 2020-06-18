@@ -1,8 +1,8 @@
 {
-  "name": "sovereignweblimited",
+  "name": "sovereign-web-limited-sanity",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "Sanity CMS for https://sovereignweb.ltd",
   "main": "package.json",
   "author": "Alvin Sovereign <web@alvinsovereign.com>",
   "license": "UNLICENSED",
