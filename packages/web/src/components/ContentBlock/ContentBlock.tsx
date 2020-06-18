@@ -18,8 +18,8 @@ interface ListItemSerializerProps {
 }
 
 const config = {
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET,
+  projectId: "o7kebdt4",
+  dataset: "production",
 }
 
 const mapToElement = {
