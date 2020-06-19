@@ -1,0 +1,18 @@
+.floatingImages {
+  height: auto !important;
+  position: absolute !important;
+  width: 50%;
+}
+
+.floatingImages img {
+  height: auto !important;
+}
+
+.leftImage {
+  left: 20%;
+  bottom: 0;
+}
+.rightImage {
+  top: 0;
+  right: 20%;
+}

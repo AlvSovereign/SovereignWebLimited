@@ -6,6 +6,7 @@ import ImageWithMask from "./ImgWithMask/ImgWithMask"
 import LandingLayout from "./Layouts/LandingLayout"
 import MasonryImages from "./MasonryImages/MasonryImages"
 import Work from "./Work/Work"
+import WorkHeroImages from "./WorkHeroImages/WorkHeroImages"
 
 export {
   Contact,
@@ -16,4 +17,5 @@ export {
   LandingLayout,
   MasonryImages,
   Work,
+  WorkHeroImages,
 }

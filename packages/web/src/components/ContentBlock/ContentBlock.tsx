@@ -107,7 +107,7 @@ const serializers = {
       return (
         <Img
           alt={altText}
-          className="w-full h-full"
+          className="w-full h-full shadow-2xl"
           fadeIn={true}
           fluid={getFluidGatsbyImage(image.asset.id, { maxWidth: 800 }, config)}
         />

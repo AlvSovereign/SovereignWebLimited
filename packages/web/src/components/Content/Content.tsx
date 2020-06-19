@@ -1,16 +1,19 @@
 import React from "react"
+import Img from "gatsby-image"
 
 import { Container, Row, Typography } from "../ui"
-import { ImageWithMask } from ".."
+import { ImageWithMask, WorkHeroImages } from ".."
 import { SanityWork } from "../../types/index"
 import ContentBlock from "../ContentBlock/ContentBlock"
+import { Link } from "gatsby"
 
 interface ContentProps {
   data: SanityWork
 }
 
 const Content = ({ data }: ContentProps) => {
-  const { mainImage, title, subtitle, url } = data
+  console.log("data: ", data)
+  const { backgroundImage, href, mainImages, title, subtitle } = data
 
   return (
     <>
@@ -23,41 +26,60 @@ const Content = ({ data }: ContentProps) => {
         justifyContent="center"
       >
         <ImageWithMask
-          alt={mainImage.altText}
+          alt={backgroundImage.altText}
           className="w-full h-full"
           fadeIn={true}
-          fluid={mainImage.image.asset.fluid}
+          fluid={backgroundImage.image.asset.fluid}
         />
-        <div className="absolute">
-          <Container>
-            <Typography
-              textAlign="center"
-              className="text-white"
-              component="h1"
-              type="pageTitle"
-            >
-              {title}
-            </Typography>
-            <Typography
-              textAlign="center"
-              className="text-white"
-              component="h1"
-              type="subheading"
-              weight="light"
-            >
-              {subtitle}
-            </Typography>
-            <Typography
-              textAlign="center"
-              className="text-white"
-              component="h1"
-              type="subheading"
-              weight="light"
-            >
-              {url}
-            </Typography>
-          </Container>
-        </div>
+        <Row
+          alignItems="center"
+          className="absolute w-full"
+          direction="col"
+          justifyContent="center"
+          withContainer={true}
+        >
+          <Row
+            alignItems="center"
+            className="flex-1"
+            direction={{ xs: "col", lg: "row" }}
+            justifyContent="center"
+          >
+            <div className="flex-1 mb-6 lg:mb-0">
+              <Typography
+                textAlign="center"
+                className="text-white"
+                component="h1"
+                type="pageTitle"
+              >
+                {title}
+              </Typography>
+              <Typography
+                textAlign="center"
+                className="text-white"
+                component="h1"
+                gutterBottom="sm"
+                type="subheading"
+                weight="light"
+              >
+                {subtitle}
+              </Typography>
+              <Typography
+                className="text-white underline"
+                component="a"
+                href={href}
+                target="_blank"
+                textAlign="center"
+                type="subheading"
+                weight="light"
+              >
+                Visit website
+              </Typography>
+            </div>
+            <div className="flex-1 w-full relative">
+              <WorkHeroImages images={mainImages} />
+            </div>
+          </Row>
+        </Row>
       </Row>
       <Row
         alignItems="center"

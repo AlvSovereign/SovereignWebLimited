@@ -18,6 +18,7 @@ interface TypographyProps {
     | "paragraph"
     | "subheading"
   weight?: "light" | "medium" | "semibold"
+  rest?: any
 }
 
 const Typography = ({
@@ -30,6 +31,7 @@ const Typography = ({
   type,
   style,
   weight,
+  ...rest
 }: TypographyProps) => {
   const Component = component || "p"
 
@@ -61,6 +63,7 @@ const Typography = ({
         className
       )}
       style={style}
+      {...rest}
     >
       {children}
     </Component>

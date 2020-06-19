@@ -49,15 +49,10 @@ const Work = ({ data }: WorkProps) => {
               height="auto"
               justifyContent="between"
             >
-              <div className="flex-1 p-2">
-                <Img
-                  className="shadow-2xl"
-                  fluid={work.thumbnail.image.asset.fluid}
-                />
-              </div>
               <Row
                 alignItems="inherit"
-                className={`flex-1 mt-4 md:mt-0 ${
+                alignSelf={{ xs: "start", md: "center" }}
+                className={`flex-1 mb-8 md:mb-0 mt-4 md:mt-0 ${
                   index % 2 === 0 ? "md:ml-8" : "md:mr-8"
                 }`}
                 direction="col"
@@ -82,6 +77,12 @@ const Work = ({ data }: WorkProps) => {
                   Learn More
                 </Link>
               </Row>
+              <div className="flex-1 w-full h-full">
+                <Img
+                  className="shadow-2xl"
+                  fluid={work.thumbnail.image.asset.fluid}
+                />
+              </div>
             </Row>
           ))}
         </div>

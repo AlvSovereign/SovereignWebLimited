@@ -53,15 +53,26 @@ export default {
       type: 'imageWithAlt',
     },
     {
-      name: 'mainImage',
+      name: 'backgroundImage',
       required: true,
-      title: 'Main image',
+      title: 'Background image',
       type: 'imageWithAlt',
+    },
+    {
+      name: 'mainImages',
+      required: true,
+      title: 'Main images',
+      type: 'array',
+      of: [
+        {
+          type: 'imageWithAlt',
+        },
+      ],
     },
     {
       name: 'technology',
       required: true,
-      title: 'Technologies Used',
+      title: 'Technologies used',
       type: 'array',
       of: [
         {

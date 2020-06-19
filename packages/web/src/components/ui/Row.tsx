@@ -3,8 +3,16 @@ import cx from "classnames"
 
 import Container from "./Container"
 
+type Alignment = "center" | "end" | "inherit" | "start" | ResponsiveProps
+type Direction = "col" | "row" | "row-reverse" | ResponsiveProps
+
+export type Breakpoints = "xs" | "sm" | "md" | "lg" | "xl"
+
+type ResponsiveProps = Pick<Breakpoints, any>
+
 interface RowProps {
-  alignItems: "center" | "end" | "inherit" | "start" //'inherit will deliberatly omit its style'
+  alignItems: Alignment //'inherit will deliberatly omit its style'
+  alignSelf?: Alignment
   background?: "black"
   children: ReactNode
   className?: string
@@ -18,18 +26,9 @@ interface RowProps {
   rest?: any
 }
 
-type Direction = "col" | "row" | "row-reverse" | ResponsiveDirection
-
-type ResponsiveDirection = {
-  xs: Direction
-  sm?: Direction
-  md?: Direction
-  lg?: Direction
-  xl?: Direction
-}
-
 const Row = ({
   alignItems,
+  alignSelf,
   background,
   children,
   className,
@@ -44,14 +43,18 @@ const Row = ({
 }: RowProps) => {
   const Element = element
 
-  const createDirectionClassName = (direction: Direction) => {
-    if (typeof direction === "object") {
-      const directions = Object.entries(direction).map(
-        entry => `${entry[0] !== "xs" ? `${entry[0]}:` : ""}flex-${entry[1]}`
+  const createResponsiveClassName = (
+    breakpoints: Direction | Alignment,
+    partial: string
+  ) => {
+    if (typeof breakpoints === "object") {
+      const className = Object.entries(breakpoints).map(
+        entry =>
+          `${entry[0] !== "xs" ? `${entry[0]}:` : ""}${partial}${entry[1]}`
       )
-      return directions
+      return className
     } else {
-      return `flex-${direction}`
+      return `${partial}${breakpoints}`
     }
   }
 
@@ -74,7 +77,9 @@ const Row = ({
           "h-screen": height === "screen",
           "flex-wrap": wrap,
         },
-        createDirectionClassName(direction),
+        createResponsiveClassName(direction, "flex-"),
+        createResponsiveClassName(alignItems, "items-"),
+        createResponsiveClassName(alignSelf, "self-"),
         className
       )}
       id={id}

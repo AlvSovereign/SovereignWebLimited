@@ -30,8 +30,18 @@ export const WorkQuery = graphql`
       name
       _id
       _rawBody(resolveReferences: { maxDepth: 5 })
+      backgroundImage {
+        altText
+        image {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid_withWebp_noBase64
+            }
+          }
+        }
+      }
       href
-      mainImage {
+      mainImages {
         altText
         image {
           asset {

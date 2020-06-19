@@ -43,7 +43,9 @@ export interface SanityWork {
     fromNow: Boolean,
     locale: string
   ): Date
+  backgroundImage: SanityImageWithAlt
   id: string
+  href: string
   name: string
   title: string
   subtitle: string
@@ -53,5 +55,4 @@ export interface SanityWork {
   mainImage: SanityImageWithAlt
   technology: [SanityTechnology]
   body: [any]
-  url: string
 }
