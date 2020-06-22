@@ -54,7 +54,7 @@ const Typography = ({
           "text-3xl md:text-4xl": type === "heading",
           "text-4xl md:text-6xl": type === "pageTitle",
           "text-base md:text-xl": type === "paragraph",
-          "text-2xl md:text-3xl": type === "subheading",
+          "text-xl md:text-3xl": type === "subheading",
           "hero-font": type === "hero",
           "font-light": weight === "light",
           "font-medium": weight === "medium",

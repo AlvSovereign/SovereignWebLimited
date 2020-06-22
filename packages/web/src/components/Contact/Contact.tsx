@@ -47,9 +47,9 @@ const Contact = () => {
           <Email fill={"#fff"} />
         </div>
         <Typography
-          component="h2"
+          component="h3"
           weight="light"
-          type="heading"
+          type="subheading"
           className="text-white"
         >
           {"info@sovereignweb.ltd"}
