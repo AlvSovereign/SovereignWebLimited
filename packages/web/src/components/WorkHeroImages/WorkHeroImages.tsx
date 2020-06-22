@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useRef, useEffect, useState } from "react"
 import Img from "gatsby-image"
+import { motion } from "framer-motion"
 import cx from "classnames"
 
 import { SanityImageWithAlt } from "../../types"
@@ -18,26 +19,39 @@ const WorkHeroImages = ({ images }: WorkHeroImagesProps) => {
         fadeIn={true}
         fluid={images[0].image.asset.fluid}
       />
-      <Img
-        alt={images[1].altText}
-        className={cx(
-          "w-full h-full z-10",
-          styles.floatingImages,
-          styles.rightImage
-        )}
-        fadeIn={true}
-        fluid={images[1].image.asset.fluid}
-      />
-      <Img
-        alt={images[2].altText}
-        className={cx(
-          "w-full h-full z-10",
-          styles.floatingImages,
-          styles.leftImage
-        )}
-        fadeIn={true}
-        fluid={images[2].image.asset.fluid}
-      />
+      <motion.div
+        animate={{ top: [-5, 5, -5] }}
+        className={cx(styles.floatingImages, styles.rightImage)}
+        transition={{
+          ease: "easeInOut",
+          delay: 1.5,
+          duration: 4,
+          loop: Infinity,
+        }}
+      >
+        <Img
+          alt={images[1].altText}
+          className="w-full h-full z-10"
+          fadeIn={true}
+          fluid={images[1].image.asset.fluid}
+        />
+      </motion.div>
+      <motion.div
+        animate={{ bottom: [-5, 5, -5] }}
+        className={cx(styles.floatingImages, styles.leftImage)}
+        transition={{
+          ease: "easeInOut",
+          duration: 4,
+          loop: Infinity,
+        }}
+      >
+        <Img
+          alt={images[2].altText}
+          className="w-full h-full z-10"
+          fadeIn={true}
+          fluid={images[2].image.asset.fluid}
+        />
+      </motion.div>
     </>
   )
 }
