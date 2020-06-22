@@ -12,7 +12,6 @@ interface ContentProps {
 }
 
 const Content = ({ data }: ContentProps) => {
-  console.log("data: ", data)
   const { backgroundImage, href, mainImages, title, subtitle } = data
 
   return (
@@ -44,7 +43,7 @@ const Content = ({ data }: ContentProps) => {
             direction={{ xs: "col", lg: "row" }}
             justifyContent="center"
           >
-            <div className="flex-1 mb-6 lg:mb-0">
+            <div className="flex-1 mb-10 lg:mb-0 px-4 md:px-0">
               <Typography
                 textAlign="center"
                 className="text-white"
@@ -75,7 +74,7 @@ const Content = ({ data }: ContentProps) => {
                 Visit website
               </Typography>
             </div>
-            <div className="flex-1 w-full relative">
+            <div className="flex-1 relative px-4" style={{ width: "80%" }}>
               <WorkHeroImages images={mainImages} />
             </div>
           </Row>

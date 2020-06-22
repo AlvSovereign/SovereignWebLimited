@@ -52,7 +52,7 @@ export interface SanityWork {
   tagline: string
   slug: SanitySlug
   thumbnail: SanityImageWithAlt
-  mainImage: SanityImageWithAlt
+  mainImages: SanityImageWithAlt[]
   technology: [SanityTechnology]
   body: [any]
 }

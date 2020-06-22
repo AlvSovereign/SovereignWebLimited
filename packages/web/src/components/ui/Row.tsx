@@ -16,6 +16,7 @@ interface RowProps {
   background?: "black"
   children: ReactNode
   className?: string
+  containerClassName?: string
   direction: Direction
   element?: any // the string of a HTML element
   height?: "auto" | "full" | "hero" | "screen"
@@ -32,6 +33,7 @@ const Row = ({
   background,
   children,
   className,
+  containerClassName,
   direction,
   element = "div",
   height,
@@ -77,15 +79,19 @@ const Row = ({
           "h-screen": height === "screen",
           "flex-wrap": wrap,
         },
-        createResponsiveClassName(direction, "flex-"),
-        createResponsiveClassName(alignItems, "items-"),
-        createResponsiveClassName(alignSelf, "self-"),
+        direction && createResponsiveClassName(direction, "flex-"),
+        alignSelf && createResponsiveClassName(alignSelf, "self-"),
+        alignItems && createResponsiveClassName(alignItems, "items-"),
         className
       )}
       id={id}
       {...rest}
     >
-      {withContainer ? <Container>{children}</Container> : <>{children}</>}
+      {withContainer ? (
+        <Container className={containerClassName}>{children}</Container>
+      ) : (
+        <>{children}</>
+      )}
     </Element>
   )
 }

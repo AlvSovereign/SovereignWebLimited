@@ -10,7 +10,6 @@ interface WorkHeroImagesProps {
 }
 
 const WorkHeroImages = ({ images }: WorkHeroImagesProps) => {
-  console.log("images: ", images)
   return (
     <>
       <Img

@@ -37,7 +37,13 @@ br {
 }
 
 .hero-height {
-  height: 90vh;
+  height: 70vh;
+}
+
+@media screen and (min-width: 641px) {
+  .hero-height {
+    height: 80vh;
+  }
 }
 
 .work-bg {
