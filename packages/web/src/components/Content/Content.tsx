@@ -43,7 +43,7 @@ const Content = ({ data }: ContentProps) => {
             direction={{ xs: "col", lg: "row" }}
             justifyContent="center"
           >
-            <div className="flex-1 mb-10 lg:mb-0 px-4 md:px-0">
+            <div className="flex-1 mb-12 lg:mb-0 pr-0 lg:pr-8">
               <Typography
                 textAlign="center"
                 className="text-white"
@@ -74,7 +74,10 @@ const Content = ({ data }: ContentProps) => {
                 Visit website
               </Typography>
             </div>
-            <div className="flex-1 relative px-4" style={{ width: "80%" }}>
+            <div
+              className="flex-1 relative pl-0 lg:pl-8"
+              style={{ width: "80%" }}
+            >
               <WorkHeroImages images={mainImages} />
             </div>
           </Row>
