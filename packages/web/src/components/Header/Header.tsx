@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import SwlLogo from "../../assets/icons/SwlLogo"
 import Logo from "../../assets/icons/Logo"
 import { Typography } from "../ui"
 
@@ -10,10 +11,10 @@ const Navigation = () => {
       <div className="flex flex-row items-center justify-between container mx-auto h-full">
         <div className="flex-1 h-8">
           <Link to="/">
-            <Logo className="h-full" fill="#fff" />
+            <SwlLogo className="h-full" fill="#fff" />
           </Link>
         </div>
-        <div className="flex-1 flex flex-row items-end justify-end">
+        <div className="flex-1 flex-row items-end justify-end hidden md:flex">
           <Link to="#our-work">
             <Typography
               className="text-white pr-8"
