@@ -6,6 +6,7 @@ import { Container, Row, Typography } from "../ui"
 import { SanityWork } from "../../types"
 
 const Work = ({ data }: WorkProps) => {
+  console.log("data: ", data)
   return (
     <Row
       alignItems="start"
@@ -53,7 +54,7 @@ const Work = ({ data }: WorkProps) => {
                 alignItems="inherit"
                 alignSelf={{ xs: "start", md: "center" }}
                 className={`flex-1 mb-8 md:mb-0 mt-4 md:mt-0 ${
-                  index % 2 === 0 ? "md:ml-8" : "md:mr-8"
+                  index % 2 === 0 ? "md:mr-8" : "md:ml-8"
                 }`}
                 direction="col"
                 height="auto"
