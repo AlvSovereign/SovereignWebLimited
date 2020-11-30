@@ -2,7 +2,7 @@ import React, { ReactNode } from "react"
 import cx from "classnames"
 
 interface TypographyProps {
-  textAlign?: "left" | "center" | "right"
+  align?: "left" | "center" | "right"
   children: ReactNode
   className?: string
   component: any
@@ -27,7 +27,7 @@ const Typography = ({
   component,
   display = "block",
   gutterBottom,
-  textAlign,
+  align,
   type,
   style,
   weight,
@@ -47,9 +47,9 @@ const Typography = ({
           "mb-2": gutterBottom === "sm",
           "mb-4": gutterBottom === "md",
           "mb-8": gutterBottom === "lg",
-          "text-center": textAlign === "center",
-          "text-left": textAlign === "left",
-          "text-right": textAlign === "right",
+          "text-center": align === "center",
+          "text-left": align === "left",
+          "text-right": align === "right",
           "text-xl": type === "nav",
           "text-3xl md:text-4xl": type === "heading",
           "text-4xl md:text-6xl": type === "pageTitle",

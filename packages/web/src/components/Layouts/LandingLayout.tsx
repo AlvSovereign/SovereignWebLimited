@@ -1,11 +1,6 @@
 import React, { ReactNode } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Contact from "../Contact/Contact"
-import Footer from "../Footer/Footer"
-import Header from "../Header/Header"
-
-import "../../styles/index.css"
+import { Contact, Footer, Navigation } from ".."
 
 const LandingLayout = ({ children }: LayoutProps) => {
   // const data = useStaticQuery(graphql`
@@ -20,7 +15,7 @@ const LandingLayout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      <Header />
+      <Navigation />
       <main>{children}</main>
       <Contact />
       <Footer />

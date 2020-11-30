@@ -1,17 +1,10 @@
 module.exports = {
-  purge: {
-    content: [
-      "./src/**/*.js",
-      "./src/**/*.jsx",
-      "./src/**/*.ts",
-      "./src/**/*.tsx",
-    ],
-  },
+  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
     colors: {
       black: "#000",
-      gold: "#ffc001",
+      yellow: "#FBBF24",
       white: "#fff",
     },
     fontFamily: {

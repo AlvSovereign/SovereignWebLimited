@@ -84,7 +84,7 @@ const serializers = {
         <Typography
           component={mapToElement[style]}
           gutterBottom="md"
-          textAlign={style === "h2" ? "center" : "left"}
+          align={style === "h2" ? "center" : "left"}
           type={mapToType[style]}
           weight={mapToWeight[style]}
         >

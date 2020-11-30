@@ -45,16 +45,16 @@ const Content = ({ data }: ContentProps) => {
           >
             <div className="flex-1 mb-12 lg:mb-0">
               <Typography
-                textAlign="center"
-                className="text-white"
+                align="center"
+                className="text-white mb-4"
                 component="h1"
                 type="pageTitle"
               >
                 {title}
               </Typography>
               <Typography
-                textAlign="center"
-                className="text-white"
+                align="center"
+                className="text-white mb-4"
                 component="h1"
                 gutterBottom="sm"
                 type="subheading"
@@ -67,7 +67,7 @@ const Content = ({ data }: ContentProps) => {
                 component="a"
                 href={href}
                 target="_blank"
-                textAlign="center"
+                align="center"
                 type="subheading"
                 weight="light"
               >
@@ -87,7 +87,7 @@ const Content = ({ data }: ContentProps) => {
         withContainer={true}
       >
         <Typography
-          textAlign="center"
+          align="center"
           className="text-white"
           component="h6"
           gutterBottom="md"
@@ -96,7 +96,7 @@ const Content = ({ data }: ContentProps) => {
           TL:DR
         </Typography>
         <Typography
-          textAlign="center"
+          align="center"
           className="text-white mx-auto w-2/3"
           component="h3"
           type="subheading"

@@ -1,17 +1,19 @@
-import React, { ReactNode } from 'react';
-import cx from 'classnames';
+import React, { ReactNode } from "react"
+import cx from "classnames"
 
 const Container = ({ className, children }: ContainerProps) => {
   return (
-    <div className={cx('container mx-auto px-4 sm:px-0', className)}>
+    <div
+      className={cx("container mx-auto lg:max-w-7xl xl:px-0 px-4 ", className)}
+    >
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Container;
+export default Container
 
 interface ContainerProps {
-  className?: string;
-  children: ReactNode;
+  className?: string
+  children: ReactNode
 }

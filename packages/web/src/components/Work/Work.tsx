@@ -21,7 +21,7 @@ const Work = ({ data }: WorkProps) => {
         <Typography
           component="h2"
           gutterBottom="sm"
-          textAlign="center"
+          align="center"
           type="heading"
           weight="semibold"
         >
@@ -30,7 +30,7 @@ const Work = ({ data }: WorkProps) => {
         <Typography
           component="h3"
           gutterBottom="md"
-          textAlign="center"
+          align="center"
           type="subheading"
           weight="light"
         >

@@ -11,18 +11,23 @@ const Hero = () => {
       justifyContent="around"
     >
       <Container>
-        <div className="flex flex-col justify-center py-12 md:py-32 w-full md:w-3/4">
+        <div className="flex flex-col justify-center py-12 md:py-32 w-full">
           <div className="mb-12">
             <Typography
+              align="center"
               className="text-white"
               component="h1"
               type="hero"
               weight="semibold"
             >
-              {"We help you realise your web and mobile applications"}
+              <span>{"We help you realise your"}</span>
+              <span className={"block text-yellow"}>
+                {"digital experiences"}
+              </span>
             </Typography>
           </div>
           <Typography
+            align="center"
             className="text-white"
             component="h2"
             type="subheading"

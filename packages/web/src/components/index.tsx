@@ -1,6 +1,6 @@
 import Contact from "./Contact/Contact"
 import Footer from "./Footer/Footer"
-import Header from "./Header/Header"
+import Navigation from "./Navigation/Navigation"
 import Hero from "./Hero/Hero"
 import ImageWithMask from "./ImgWithMask/ImgWithMask"
 import LandingLayout from "./Layouts/LandingLayout"
@@ -11,7 +11,7 @@ import WorkHeroImages from "./WorkHeroImages/WorkHeroImages"
 export {
   Contact,
   Footer,
-  Header,
+  Navigation,
   Hero,
   ImageWithMask,
   LandingLayout,
