@@ -1,5 +1,5 @@
 import React from "react"
-import { Typography, Row } from "../ui"
+import { Text, Row } from "../ui"
 import Email from "../../assets/icons/Email"
 
 const Contact = () => {
@@ -12,31 +12,21 @@ const Contact = () => {
       justifyContent="start"
       withContainer={true}
     >
-      <Typography
-        component="h2"
-        type="heading"
-        className="text-white"
-        weight="semibold"
-      >
+      <Text as="h2" type="heading" className="text-white" weight="semibold">
         {"Any ideas for collaboration?"}
-      </Typography>
-      <Typography
-        component="h2"
-        type="heading"
-        className="text-white"
-        weight="semibold"
-      >
+      </Text>
+      <Text as="h2" type="heading" className="text-white" weight="semibold">
         {"We would love to work with you."}
-      </Typography>
-      <Typography
-        component="h2"
+      </Text>
+      <Text
+        as="h2"
         className="text-white"
         gutterBottom="md"
         type="heading"
         weight="semibold"
       >
         {"Let's start a conversation."}
-      </Typography>
+      </Text>
       <Row
         alignItems="center"
         direction="row"
@@ -46,14 +36,9 @@ const Contact = () => {
         <div className="pr-4">
           <Email fill={"#fff"} />
         </div>
-        <Typography
-          component="h3"
-          weight="light"
-          type="subheading"
-          className="text-white"
-        >
+        <Text as="h3" weight="light" type="subheading" className="text-white">
           {"info@sovereignweb.ltd"}
-        </Typography>
+        </Text>
       </Row>
     </Row>
   )

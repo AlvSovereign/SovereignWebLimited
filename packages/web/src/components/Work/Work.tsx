@@ -2,11 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-import { Container, Row, Typography } from "../ui"
+import { Container, Row, Text } from "../ui"
 import { SanityWork } from "../../types"
 
 const Work = ({ data }: WorkProps) => {
-  console.log("data: ", data)
   return (
     <Row
       alignItems="start"
@@ -18,24 +17,24 @@ const Work = ({ data }: WorkProps) => {
       justifyContent="start"
     >
       <Container>
-        <Typography
-          component="h2"
+        <Text
+          as="h2"
           gutterBottom="sm"
           align="center"
           type="heading"
           weight="semibold"
         >
           Our Work
-        </Typography>
-        <Typography
-          component="h3"
+        </Text>
+        <Text
+          as="h3"
           gutterBottom="md"
           align="center"
           type="subheading"
           weight="light"
         >
           Amazing clients have allowed us to produce work we are proud of.
-        </Typography>
+        </Text>
         <div className="flex flex-col ">
           {data.map(({ node: work }, index: number) => (
             <Row
@@ -60,17 +59,12 @@ const Work = ({ data }: WorkProps) => {
                 height="auto"
                 justifyContent="inherit"
               >
-                <Typography component="h3" gutterBottom="sm" type="subheading">
+                <Text as="h3" gutterBottom="sm" type="subheading">
                   {work.title}
-                </Typography>
-                <Typography
-                  component="h4"
-                  gutterBottom="sm"
-                  type="paragraph"
-                  weight="light"
-                >
+                </Text>
+                <Text as="h4" gutterBottom="sm" type="paragraph" weight="light">
                   {work.subtitle}
-                </Typography>
+                </Text>
                 <Link
                   className="inline underline"
                   to={`/work/${work.slug.current}`}

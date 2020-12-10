@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 
-import { Container, Row, Typography } from "../ui"
+import { Container, Row, Text } from "../ui"
 import { ImageWithMask, WorkHeroImages } from ".."
 import { SanityWork } from "../../types/index"
 import ContentBlock from "../ContentBlock/ContentBlock"
@@ -44,27 +44,27 @@ const Content = ({ data }: ContentProps) => {
             justifyContent="center"
           >
             <div className="flex-1 mb-12 lg:mb-0">
-              <Typography
+              <Text
                 align="center"
                 className="text-white mb-4"
-                component="h1"
+                as="h1"
                 type="pageTitle"
               >
                 {title}
-              </Typography>
-              <Typography
+              </Text>
+              <Text
                 align="center"
                 className="text-white mb-4"
-                component="h1"
+                as="h1"
                 gutterBottom="sm"
                 type="subheading"
                 weight="light"
               >
                 {subtitle}
-              </Typography>
-              <Typography
+              </Text>
+              <Text
                 className="text-white underline"
-                component="a"
+                as="a"
                 href={href}
                 target="_blank"
                 align="center"
@@ -72,7 +72,7 @@ const Content = ({ data }: ContentProps) => {
                 weight="light"
               >
                 Visit website
-              </Typography>
+              </Text>
             </div>
           </Row>
         </Row>
@@ -86,23 +86,23 @@ const Content = ({ data }: ContentProps) => {
         justifyContent="center"
         withContainer={true}
       >
-        <Typography
+        <Text
           align="center"
           className="text-white"
-          component="h6"
+          as="h6"
           gutterBottom="md"
           type="paragraph"
         >
           TL:DR
-        </Typography>
-        <Typography
+        </Text>
+        <Text
           align="center"
           className="text-white mx-auto w-2/3"
-          component="h3"
+          as="h3"
           type="subheading"
         >
           {data.tagline}
-        </Typography>
+        </Text>
       </Row>
       <Row
         alignItems="start"

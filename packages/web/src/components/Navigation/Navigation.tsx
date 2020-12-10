@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import SwlLogo from "../../assets/icons/SwlLogo"
 import Logo from "../../assets/icons/Logo"
-import { Typography } from "../ui"
+import { Text } from "../ui"
 
 const Navigation = () => {
   return (
@@ -17,24 +17,24 @@ const Navigation = () => {
           </div>
           <div className="flex-1 flex-row items-end justify-end hidden md:flex">
             <Link to="#our-work">
-              <Typography
+              <Text
                 className="text-white pr-8"
-                component="span"
+                as="span"
                 type="nav"
                 weight="semibold"
               >
                 Our Work
-              </Typography>
+              </Text>
             </Link>
             <Link to="#contact">
-              <Typography
+              <Text
                 className="text-white"
-                component="span"
+                as="span"
                 type="nav"
                 weight="semibold"
               >
                 Contact
-              </Typography>
+              </Text>
             </Link>
           </div>
         </div>
