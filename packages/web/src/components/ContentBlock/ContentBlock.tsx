@@ -3,7 +3,7 @@ import BlockContent from "@sanity/block-content-to-react"
 import Img, { FluidObject } from "gatsby-image"
 import { getFluidGatsbyImage } from "gatsby-source-sanity"
 
-import { Typography, Row } from "../ui"
+import { Text, Row } from "../ui"
 import MasonryImages from "../MasonryImages/MasonryImages"
 
 interface ContentBlockProps {
@@ -54,21 +54,21 @@ const serializers = {
         element="li"
         justifyContent="start"
       >
-        <Typography
-          component={mapToElement[style]}
+        <Text
+          as={mapToElement[style]}
           className="mr-2"
           gutterBottom="md"
           type={mapToType[style]}
         >
           {"⋅"}
-        </Typography>
-        <Typography
-          component={mapToElement[style]}
+        </Text>
+        <Text
+          as={mapToElement[style]}
           gutterBottom="md"
           type={mapToType[style]}
         >
           {children}
-        </Typography>
+        </Text>
       </Row>
     )
   },
@@ -81,15 +81,15 @@ const serializers = {
       }
 
       return (
-        <Typography
-          component={mapToElement[style]}
+        <Text
+          as={mapToElement[style]}
           gutterBottom="md"
           align={style === "h2" ? "center" : "left"}
           type={mapToType[style]}
           weight={mapToWeight[style]}
         >
           {children}
-        </Typography>
+        </Text>
       )
     },
     image: ({ node }) => {
