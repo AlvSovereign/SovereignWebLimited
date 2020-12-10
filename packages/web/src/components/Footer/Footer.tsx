@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Typography, Row } from "../ui"
+import { Container, Text, Row } from "../ui"
 
 const Footer = () => {
   return (
@@ -12,9 +12,9 @@ const Footer = () => {
       height="auto"
       withContainer={true}
     >
-      <Typography component="h3" type="subheading" weight="semibold">
+      <Text as="p" type="subheading" weight="semibold">
         {"Sovereign Web Limited, inc 2019"}
-      </Typography>
+      </Text>
     </Row>
   )
 }

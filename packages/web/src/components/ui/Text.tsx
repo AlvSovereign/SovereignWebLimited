@@ -5,7 +5,7 @@ interface TypographyProps {
   align?: "left" | "center" | "right"
   children: ReactNode
   className?: string
-  component: any
+  as: any
   display?: "block" | "inline"
   gutterBottom?: "sm" | "md" | "lg"
   style?: object
@@ -21,10 +21,10 @@ interface TypographyProps {
   rest?: any
 }
 
-const Typography = ({
+const Text = ({
   children,
   className,
-  component,
+  as = "p",
   display = "block",
   gutterBottom,
   align,
@@ -33,12 +33,12 @@ const Typography = ({
   weight,
   ...rest
 }: TypographyProps) => {
-  const Component = component || "p"
+  const Component = as
 
   return (
     <Component
       className={cx(
-        "typography-opacity",
+        "Text-opacity",
         "font-sans",
         "subpixel-antialiased",
         {
@@ -51,10 +51,10 @@ const Typography = ({
           "text-left": align === "left",
           "text-right": align === "right",
           "text-xl": type === "nav",
-          "text-3xl md:text-4xl": type === "heading",
-          "text-4xl md:text-6xl": type === "pageTitle",
+          "text-3xl md:text-4xl tracking-tight": type === "heading",
+          "text-4xl md:text-6xl tracking-tight": type === "pageTitle",
           "text-base md:text-xl": type === "paragraph",
-          "text-xl md:text-3xl": type === "subheading",
+          "text-xl md:text-3xl tracking-tight": type === "subheading",
           "hero-font": type === "hero",
           "font-light": weight === "light",
           "font-medium": weight === "medium",
@@ -70,4 +70,4 @@ const Typography = ({
   )
 }
 
-export default Typography
+export default Text

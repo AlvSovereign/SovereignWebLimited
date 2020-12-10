@@ -33,6 +33,7 @@ br {
 
 .hero-font {
   font-size: calc(13.34px + 5.84vw);
+  letter-spacing: -0.025em;
   line-height: calc(30.7px + 5.09vw);
 }
 

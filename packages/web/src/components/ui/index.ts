@@ -1,5 +1,5 @@
 import Container from './Container';
 import Row from './Row';
-import Typography from './Typography';
+import Text from './Text';
 
-export { Container, Row, Typography };
+export { Container, Row, Text };

@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react"
 import cx from "classnames"
-
 import Container from "./Container"
 
 type Alignment = "center" | "end" | "inherit" | "start" | ResponsiveProps

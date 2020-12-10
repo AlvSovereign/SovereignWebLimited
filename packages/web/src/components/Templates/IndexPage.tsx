@@ -1,7 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import { Contact, LandingLayout, Hero, Work } from ".."
+import { Features, LandingLayout, Hero, Work } from ".."
 
 const IndexPage = ({ pageContext }) => {
   const { allWork } = pageContext
@@ -9,6 +7,7 @@ const IndexPage = ({ pageContext }) => {
   return (
     <LandingLayout>
       <Hero />
+      <Features />
       <Work data={allWork} />
     </LandingLayout>
   )

@@ -4,7 +4,10 @@ import cx from "classnames"
 const Container = ({ className, children }: ContainerProps) => {
   return (
     <div
-      className={cx("container mx-auto lg:max-w-7xl xl:px-0 px-4 ", className)}
+      className={cx(
+        "container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8",
+        className
+      )}
     >
       {children}
     </div>
