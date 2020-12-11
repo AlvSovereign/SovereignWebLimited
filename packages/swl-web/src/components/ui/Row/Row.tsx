@@ -15,7 +15,7 @@ type Justify =
 type Direction = 'col' | 'row' | 'row-reverse' | ResponsiveProps;
 
 interface RowProps {
-  alignItems: Alignment;
+  alignItems?: Alignment;
   alignSelf?: Alignment;
   as: any;
   children: ReactNode;
