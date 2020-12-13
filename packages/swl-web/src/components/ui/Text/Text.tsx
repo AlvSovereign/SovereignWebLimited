@@ -55,7 +55,7 @@ const Text: FC<TextProps> = ({
             type === 'hero',
           'text-4xl md:text-6xl tracking-tight': type === 'pageTitle',
           'text-base md:text-xl': type === 'paragraph',
-          'text-xl md:text-3xl': type === 'subheading',
+          'text-xl md:text-2xl lg:text-3xl': type === 'subheading',
           'hero-font': type === 'hero',
           'font-light': weight === 'light',
           'font-medium': weight === 'medium',

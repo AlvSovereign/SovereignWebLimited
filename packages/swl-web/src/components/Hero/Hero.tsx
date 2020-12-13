@@ -35,7 +35,7 @@ const Hero: FC<HeroProps> = ({}) => {
         </Text>
         <Text
           align='center'
-          className='text-gray-50 mb-4 md:mb-8'
+          className='text-gray-50 mb-8 md:mb-12'
           as='h2'
           type='subheading'
           weight='light'>
@@ -46,7 +46,7 @@ const Hero: FC<HeroProps> = ({}) => {
           onClick={() => {}}
           size='xl'
           type='button'>
-          Contact Us
+          CONTACT US
         </Button>
       </Row>
     </Row>
