@@ -1,5 +1,6 @@
-import Header from './Header/Header';
-import Hero from './Hero/Hero';
+import Features from './sections/Features/Features';
+import Header from './sections/Header/Header';
+import Hero from './sections/Hero/Hero';
 
 import Button from './ui/Button/Button'
 import Container from './ui/Container/Container'
@@ -8,4 +9,4 @@ import Text from './ui/Text/Text'
 
 import Swl from './images/Swl'
 
-export { Button, Container, Header, Hero, Row, Swl, Text }
+export { Button, Container, Features, Header, Hero, Row, Swl, Text }

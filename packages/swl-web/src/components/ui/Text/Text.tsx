@@ -5,6 +5,7 @@ interface TextProps {
   align?: 'left' | 'center' | 'right';
   children: ReactNode;
   className?: string;
+  color?: 'black' | 'blue' | 'grey' | 'yellow';
   as: any;
   display?: 'block' | 'inline';
   gutterBottom?: 'sm' | 'md' | 'lg';
@@ -17,19 +18,20 @@ interface TextProps {
     | 'pageTitle'
     | 'paragraph'
     | 'subheading';
-  weight?: 'light' | 'medium' | 'semibold';
+  weight?: 'bold' | 'light' | 'medium' | 'semibold';
   rest?: any;
 }
 
 const Text: FC<TextProps> = ({
+  as = 'p',
+  align,
   children,
   className,
-  as = 'p',
+  color,
   display = 'block',
   gutterBottom,
-  align,
-  type,
   style,
+  type,
   weight,
   ...rest
 }) => {
@@ -57,9 +59,14 @@ const Text: FC<TextProps> = ({
           'text-base md:text-xl': type === 'paragraph',
           'text-xl md:text-2xl lg:text-3xl': type === 'subheading',
           'hero-font': type === 'hero',
+          'font-bold': weight === 'bold',
           'font-light': weight === 'light',
           'font-medium': weight === 'medium',
           'font-semibold': weight === 'semibold',
+          'text-grey-900': color === 'black',
+          'text-blue-600': color === 'blue',
+          'text-grey-500': color === 'grey',
+          ' text-yellow-400': color === 'yellow',
         },
         className
       )}

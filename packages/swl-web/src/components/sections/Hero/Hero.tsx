@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button, Row, Text } from '../';
+import { Button, Row, Text } from '../..';
 
 interface HeroProps {}
 
