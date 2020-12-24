@@ -11,9 +11,11 @@
     "autoprefixer": "^10.1.0",
     "clsx": "^1.1.1",
     "next": "10.0.3",
+    "phosphor-react": "^1.1.2",
     "postcss": "^8.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-markdown": "^5.0.3",
     "tailwindcss": "^2.0.1"
   },
   "devDependencies": {
