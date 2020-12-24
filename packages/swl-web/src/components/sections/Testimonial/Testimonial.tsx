@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import jwHead from '../../../assets/images/jw_head.jpg';
 import { Row } from '../..';
 
 interface TestimonialProps {}
